@@ -14,7 +14,7 @@ export default function Sidebar() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" end>
+            <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : undefined)} end>
               <span>
                 <MdOutlineDashboard />
               </span>
@@ -22,7 +22,7 @@ export default function Sidebar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="sales" className={classes.active} style={{ pointerEvents: 'none' }}>
+            <NavLink to="sales" className={({ isActive }) => (isActive ? classes.active : undefined)} style={{ pointerEvents: 'none' }}>
               <span>
                 <MdOutlineTimeline />
               </span>
@@ -48,7 +48,7 @@ export default function Sidebar() {
             </ul>
           </li>
           <li>
-            <NavLink to="user-settings">
+            <NavLink to="user-settings" className={({ isActive }) => (isActive ? classes.active : undefined)}>
               <span>
                 <FaUsersCog />
               </span>

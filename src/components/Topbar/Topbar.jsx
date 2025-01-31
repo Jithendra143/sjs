@@ -3,8 +3,12 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { FaUser } from "react-icons/fa";
 
 import classes from './Topbar.module.css'
+import { useContext } from "react";
+import { AuthContext } from "../../shared/context/auth-context";
+import Button from "../FormElements/Button";
 
 export default function Topbar({onClick}){
+  const authCtx = useContext(AuthContext);
     return <div className={classes.topbar}>
     <div className={classes.leftMenu}>
       <span onClick={onClick}>
@@ -22,7 +26,7 @@ export default function Topbar({onClick}){
                   <a href="/">Profile Settings</a>
               </li>
               <li>
-                  <a href="/">Logout</a>
+                  <Button onClick={authCtx.logout}>Logout</Button>
               </li>
           </ul>
       </div>
