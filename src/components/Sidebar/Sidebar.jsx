@@ -7,9 +7,9 @@ export default function Sidebar() {
   return (
     <>
       <div className={classes.logo}>
-        <a href="/">
+        <NavLink to="/">
           <h3>SJS Petrolium</h3>
-        </a>
+        </NavLink>
       </div>
       <nav>
         <ul>
